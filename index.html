@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sistem Absensi Mahasiswa</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+    header {
+      background: #0054a6;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+    header img {
+      width: 60px;
+      vertical-align: middle;
+    }
+    header h1 {
+      display: inline;
+      margin-left: 15px;
+      font-size: 24px;
+      vertical-align: middle;
+    }
+    main {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 40px;
+    }
+    .login-form {
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      width: 100%;
+      max-width: 400px;
+    }
+    .login-form h2 {
+      margin-bottom: 20px;
+      text-align: center;
+      color: #333;
+    }
+    .login-form input {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+    .login-form button {
+      width: 100%;
+      padding: 10px;
+      background: #0054a6;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+    .login-form a {
+      display: block;
+      text-align: right;
+      margin-top: 10px;
+      font-size: 14px;
+      color: #0054a6;
+      text-decoration: none;
+    }
+    footer {
+      text-align: center;
+      padding: 15px;
+      background: #333;
+      color: white;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <img src="https://upload.wikimedia.org/wikipedia/id/thumb/e/e7/Logo_ITN_Malang.png/600px-Logo_ITN_Malang.png" alt="Logo ITN Malang">
+  <h1>Sistem Absensi Mahasiswa</h1>
+</header>
+
+<main>
+  <form class="login-form" onsubmit="return login(event)">
+    <h2>Login</h2>
+    <input type="text" id="email" placeholder="Email atau NIM" required />
+    <input type="password" id="password" placeholder="Password" required />
+    <button type="submit">Login</button>
+    <a href="#">Lupa Password?</a>
+  </form>
+</main>
+
+<footer>
+  &copy; 2025 Institut Teknologi Nasional Malang. Kontak: info@itn.ac.id | (0341) 123456
+</footer>
+
+<script>
+  function login(event) {
+    event.preventDefault(); // Cegah reload
+
+    const email = document.getElementById('email').value;
+    const password = document.getElementById('password').value;
+
+    // Login hardcoded
+    const validEmail = "2418010@itn.ac.id";
+    const validPassword = "absensi2025";
+
+    if (email === validEmail && password === validPassword) {
+      alert("Login berhasil! Selamat datang.");
+      // Simulasi redirect
+      window.location.href = "dashboard.html"; // Ganti sesuai file tujuan
+    } else {
+      alert("Email atau password salah!");
+    }
+  }
+</script>
+
+</body>
+</html>
